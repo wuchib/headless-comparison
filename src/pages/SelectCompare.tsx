@@ -16,7 +16,7 @@ export function SelectCompare() {
         <h2 className="text-3xl font-bold tracking-tight text-zinc-900">Select Component</h2>
         <p className="text-zinc-500 mt-2 text-lg">Comparing Select implementations across Headless UI libraries with identical design. Notice the structural differences between Compound Components (Radix), Render Props (Headless UI), and UI Primitives (React Aria).</p>
       </div>
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6 items-start">
         <CompareCard
           title="Radix UI"
           description="Compound component pattern with dedicated Context management. Explicit parts like Root, Trigger, Portal, Content, Viewport, Item."

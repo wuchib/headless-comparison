@@ -15,7 +15,7 @@ export function DialogCompare() {
         <h2 className="text-3xl font-bold tracking-tight text-zinc-900">Dialog Component</h2>
         <p className="text-zinc-500 mt-2 text-lg">Comparing Modal Dialog implementations across Headless UI libraries. Observe how each library handles portal injection, overlay blurring, state driven animations, and focus traps.</p>
       </div>
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6 items-start">
         <CompareCard
           title="Radix UI"
           description="Very granular API. Root -> Portal -> Overlay + Content -> Title + Description + Close."
