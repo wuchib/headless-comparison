@@ -1,0 +1,51 @@
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
+import { Settings2, X } from 'lucide-react';
+import { Button } from '../shared/Button';
+import { cn } from '../../utils/cn';
+
+export function HeadlessPopoverDemo() {
+  return (
+    <Popover className="relative">
+      <PopoverButton as={Button} variant="outline" className="gap-2 focus-visible:ring-blue-500 data-[active]:bg-zinc-100">
+        <Settings2 className="w-4 h-4" />
+        Settings
+      </PopoverButton>
+
+      <PopoverPanel
+        transition
+        anchor="bottom start"
+        className={cn(
+          "z-50 mt-2 w-72 rounded-xl border border-zinc-200 bg-white p-4 shadow-md outline-none transition duration-200 ease-out data-[closed]:scale-95 data-[closed]:opacity-0"
+        )}
+      >
+        {({ close }) => (
+          <>
+            <div className="flex flex-col gap-4">
+              <div className="space-y-2">
+                <h4 className="font-medium leading-none text-zinc-900">Dimensions</h4>
+                <p className="text-sm text-zinc-500">Set the dimensions for the layer.</p>
+              </div>
+              <div className="grid gap-2">
+                <div className="grid grid-cols-3 items-center gap-4">
+                  <label htmlFor="headless-width" className="text-sm font-medium text-zinc-900">Width</label>
+                  <input id="headless-width" defaultValue="100%" className="col-span-2 flex h-8 w-full rounded-md border border-zinc-200 bg-white px-3 py-1 text-sm ring-offset-white placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 text-zinc-900" />
+                </div>
+                <div className="grid grid-cols-3 items-center gap-4">
+                  <label htmlFor="headless-height" className="text-sm font-medium text-zinc-900">Height</label>
+                  <input id="headless-height" defaultValue="25px" className="col-span-2 flex h-8 w-full rounded-md border border-zinc-200 bg-white px-3 py-1 text-sm ring-offset-white placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 text-zinc-900" />
+                </div>
+              </div>
+            </div>
+            <button
+              onClick={() => close()}
+              className="absolute right-3 top-3 rounded-md p-1 opacity-70 hover:bg-zinc-100 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-blue-500 text-zinc-500 transition-colors"
+            >
+              <X className="h-4 w-4" />
+              <span className="sr-only">Close</span>
+            </button>
+          </>
+        )}
+      </PopoverPanel>
+    </Popover>
+  );
+}
