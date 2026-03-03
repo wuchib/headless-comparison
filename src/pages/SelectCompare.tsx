@@ -3,11 +3,13 @@ import { CompareCard } from '../components/shared/CompareCard';
 import { RadixSelectDemo } from '../components/select/RadixSelectDemo';
 import { HeadlessSelectDemo } from '../components/select/HeadlessSelectDemo';
 import { AriaSelectDemo } from '../components/select/AriaSelectDemo';
+import { ZagSelectDemo } from '../components/select/ZagSelectDemo';
 
 // Using Vite's ?raw import to get the source code as string
 import radixCode from '../components/select/RadixSelectDemo?raw';
 import headlessCode from '../components/select/HeadlessSelectDemo?raw';
 import ariaCode from '../components/select/AriaSelectDemo?raw';
+import zagCode from '../components/select/ZagSelectDemo?raw';
 
 export function SelectCompare() {
   return (
@@ -44,6 +46,16 @@ export function SelectCompare() {
         >
           <div className="w-64">
             <AriaSelectDemo />
+          </div>
+        </CompareCard>
+
+        <CompareCard
+          title="Zag"
+          description="Zag's machine-based approach. Explicit state management and event handling. Highly customizable."
+          codeSnippet={zagCode}
+        >
+          <div className="w-64">
+            <ZagSelectDemo />
           </div>
         </CompareCard>
       </div>

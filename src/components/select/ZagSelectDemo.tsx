@@ -4,7 +4,12 @@ import { useId, useMemo } from 'react';
 import { Check, ChevronDown } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
-const data = [
+interface FruitItem {
+  label: string;
+  value: string;
+}
+
+const data: FruitItem[] = [
   { label: 'Apple', value: 'apple' },
   { label: 'Banana', value: 'banana' },
   { label: 'Blueberry', value: 'blueberry' },
@@ -15,23 +20,20 @@ const data = [
 export function ZagSelectDemo() {
   const collection = useMemo(
     () =>
-      select.collection({
+      select.collection<FruitItem>({
         items: data,
+        itemToValue: (item) => item.value,
+        itemToString: (item) => item.label,
       }),
     []
   );
 
-  const [state, send] = useMachine(
-    select.machine({
-      id: useId(),
-      // @ts-ignore
-      collection,
-    }),
-    { context: { collection } }
-  );
+  const service = useMachine(select.machine, {
+    id: useId(),
+    collection,
+  });
 
-  // @ts-ignore
-  const api = select.connect(state, send, normalizeProps);
+  const api = select.connect(service, normalizeProps);
 
   return (
     <div className="flex flex-col gap-1 w-full relative group">
@@ -58,6 +60,8 @@ export function ZagSelectDemo() {
           >
             {data.map((item) => {
               const itemState = api.getItemState({ item });
+              const isSelected = itemState.selected;
+
               return (
                 <li
                   key={item.value}
@@ -65,11 +69,11 @@ export function ZagSelectDemo() {
                   className={cn(
                     "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none",
                     itemState.highlighted ? 'bg-blue-100 text-blue-900' : 'text-zinc-900',
-                    itemState.checked ? 'font-medium' : ''
+                    isSelected ? 'font-medium' : ''
                   )}
                 >
                   <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
-                    {itemState.checked && <Check className="h-4 w-4 text-blue-600" />}
+                    {isSelected && <Check className="h-4 w-4 text-blue-600" />}
                   </span>
                   {item.label}
                 </li>

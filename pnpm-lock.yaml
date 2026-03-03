@@ -32,6 +32,9 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.2.1
         version: 4.2.1(vite@7.3.1(@types/node@24.11.0)(jiti@2.6.1)(lightningcss@1.31.1))
+      '@zag-js/presence':
+        specifier: ^1.35.3
+        version: 1.35.3
       '@zag-js/react':
         specifier: ^1.35.2
         version: 1.35.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -1756,6 +1759,9 @@ packages:
   '@zag-js/core@1.35.2':
     resolution: {integrity: sha512-GDA27Val+dV/XEEVh9ghXky96eiC8W4JkSBFt21SecGqJl5LjKJQn9ZMg81TZ+kUwIEd0F3HTfk6FKLSjrC3qg==}
 
+  '@zag-js/core@1.35.3':
+    resolution: {integrity: sha512-fGAHyqOYSEFmo52t7wI4dvbFfLyJmUlyf7wknsiUlzUHlrn3yv5PAZYZ2TibpOD1hwXIp4AoCjbiIPPZBxirZw==}
+
   '@zag-js/date-picker@1.35.2':
     resolution: {integrity: sha512-C9Or9Qn1TQIt6VoGEfoxpM1pwGZedHX99w+QGZJZErBBBPXejG8rzmCGOwqRI6Ui8Sqlbi9yjWNCY9qRCXKlaQ==}
     peerDependencies:
@@ -1774,6 +1780,9 @@ packages:
 
   '@zag-js/dom-query@1.35.2':
     resolution: {integrity: sha512-iuqtod4+8bMeVC/r5LER/sEqHPRFCXHAyEAdJnAScBnHvnQGbFr0NDxjx3G378gndjYimgHZb98id5rpFwW1Fg==}
+
+  '@zag-js/dom-query@1.35.3':
+    resolution: {integrity: sha512-1RbFZoT4CjlHN9TUNse1++ZVOyKo45ktucTIT349o6HMsoWWKmTJDPvFkMBbmu/qY6XXn4dT+LJEp4bL3DR+Qw==}
 
   '@zag-js/drawer@1.35.2':
     resolution: {integrity: sha512-xBmMN0n3iP6f8eVXUy6WFUTZFe6eZmVTm1phAk+psXIlKJwTOH488t07q2XHwlAucxuL9yT+Z7Vpc4cbGbehsA==}
@@ -1849,6 +1858,9 @@ packages:
 
   '@zag-js/presence@1.35.2':
     resolution: {integrity: sha512-NGK+dYDNkqu9TQzGzAQyKRfF85AdKLVR11qETxjUzBV/0Deah3XwKBqre6lGC3rjv4e3u4hqezY7JWdnp3diTQ==}
+
+  '@zag-js/presence@1.35.3':
+    resolution: {integrity: sha512-ev5E7+U9IZAGvEaflpdVLHaZl8ZaQMhGB3ypd0yKhPwXeM51obV8w3+5HjzTqHPl8TKuoHWL31YaiUBd5EuS6w==}
 
   '@zag-js/progress@1.35.2':
     resolution: {integrity: sha512-53m2pxkqcVBuubMzKx7Gs6q6kgySz7Xj/g3av4ASNM33FJGPgYOi61dGI0QR8L38txuqy4pdwLKxuRBuJOa2kQ==}
@@ -1931,8 +1943,14 @@ packages:
   '@zag-js/types@1.35.2':
     resolution: {integrity: sha512-Y78aZ4yrQJGGiFBh9j/PAPRbFEvHYb0YJ6PlbhqMes3liIH2GOPEdCllFvxMW/Zxck81SvEodrVoVbNLhKL0Ng==}
 
+  '@zag-js/types@1.35.3':
+    resolution: {integrity: sha512-Fnm3AMs1lfb55hlkip/eJeWHOjFB3gSi1JkZlkkdltG2l7y/zsHkumPSe6jIKy+DRRIFKRCyXVTatbPN27bO3w==}
+
   '@zag-js/utils@1.35.2':
     resolution: {integrity: sha512-E/9S9hzXmeL94wkBY7PFv3ynopqCl0TLL//yhgMzRj0D00F54OWgjgKNY8bUZqSEPztJe/uNJEAwQ6QuyBIfsw==}
+
+  '@zag-js/utils@1.35.3':
+    resolution: {integrity: sha512-LHcC+9y6TFhDsIz9I3koYxONl2JFfx5yQDzc6ZEQO2cqzXedRcN0R9IPqNGCX7JuhGt14ctDkVCm1JWGP2J6Wg==}
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -4861,6 +4879,11 @@ snapshots:
       '@zag-js/dom-query': 1.35.2
       '@zag-js/utils': 1.35.2
 
+  '@zag-js/core@1.35.3':
+    dependencies:
+      '@zag-js/dom-query': 1.35.3
+      '@zag-js/utils': 1.35.3
+
   '@zag-js/date-picker@1.35.2(@internationalized/date@3.11.0)':
     dependencies:
       '@internationalized/date': 3.11.0
@@ -4899,6 +4922,10 @@ snapshots:
   '@zag-js/dom-query@1.35.2':
     dependencies:
       '@zag-js/types': 1.35.2
+
+  '@zag-js/dom-query@1.35.3':
+    dependencies:
+      '@zag-js/types': 1.35.3
 
   '@zag-js/drawer@1.35.2':
     dependencies:
@@ -5083,6 +5110,12 @@ snapshots:
       '@zag-js/core': 1.35.2
       '@zag-js/dom-query': 1.35.2
       '@zag-js/types': 1.35.2
+
+  '@zag-js/presence@1.35.3':
+    dependencies:
+      '@zag-js/core': 1.35.3
+      '@zag-js/dom-query': 1.35.3
+      '@zag-js/types': 1.35.3
 
   '@zag-js/progress@1.35.2':
     dependencies:
@@ -5291,7 +5324,13 @@ snapshots:
     dependencies:
       csstype: 3.2.3
 
+  '@zag-js/types@1.35.3':
+    dependencies:
+      csstype: 3.2.3
+
   '@zag-js/utils@1.35.2': {}
+
+  '@zag-js/utils@1.35.3': {}
 
   acorn-jsx@5.3.2(acorn@8.16.0):
     dependencies:
