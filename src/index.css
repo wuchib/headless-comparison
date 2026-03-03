@@ -5,7 +5,55 @@
   --color-primary-100: #dbeafe;
   --color-primary-500: #3b82f6;
   --color-primary-600: #2563eb;
-  /* Add more theme colors if needed */
+
+  --animate-overlay-show: overlayShow 200ms ease-out;
+  --animate-overlay-hide: overlayHide 200ms ease-in forwards;
+  --animate-content-show: contentShow 200ms ease-out;
+  --animate-content-hide: contentHide 200ms ease-in forwards;
+
+  @keyframes overlayShow {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes overlayHide {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes contentShow {
+    from {
+      opacity: 0;
+      scale: 0.95;
+    }
+
+    to {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
+  @keyframes contentHide {
+    from {
+      opacity: 1;
+      scale: 1;
+    }
+
+    to {
+      opacity: 0;
+      scale: 0.95;
+    }
+  }
 }
 
 @layer base {

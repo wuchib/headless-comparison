@@ -15,10 +15,10 @@ export function AriaDialogDemo() {
       </RACButton>
       <ModalOverlay
         isDismissable
-        className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm data-[entering]:animate-in data-[exiting]:animate-out data-[exiting]:fade-out-0 data-[entering]:fade-in-0"
+        className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm data-[entering]:animate-overlay-show data-[exiting]:animate-overlay-hide"
       >
         <Modal
-          className="fixed left-[50%] top-[50%] z-50 w-full max-w-lg translate-x-[-50%] translate-y-[-50%] transform overflow-hidden rounded-xl bg-white p-6 border border-zinc-200 shadow-lg transition-all duration-200 ease-out data-[exiting]:scale-95 data-[exiting]:opacity-0 data-[entering]:animate-in data-[exiting]:animate-out data-[exiting]:zoom-out-95 data-[entering]:zoom-in-95 data-[exiting]:slide-out-to-left-1/2 data-[exiting]:slide-out-to-top-[48%] data-[entering]:slide-in-from-left-1/2 data-[entering]:slide-in-from-top-[48%]"
+          className="fixed left-[50%] top-[50%] z-50 w-full max-w-lg translate-x-[-50%] translate-y-[-50%] overflow-hidden rounded-xl bg-white p-6 border border-zinc-200 shadow-lg data-[entering]:animate-content-show data-[exiting]:animate-content-hide"
         >
           <Dialog className="outline-none">
             {({ close }) => (
