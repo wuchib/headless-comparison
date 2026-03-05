@@ -17,7 +17,7 @@ import { Button } from '../shared/Button';
 export function FloatingPopoverDemo() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { refs, floatingStyles, context } = useFloating({
+  const { refs: floatingSetters, floatingStyles, context } = useFloating({
     open: isOpen,
     onOpenChange: setIsOpen,
     middleware: [
@@ -41,7 +41,7 @@ export function FloatingPopoverDemo() {
   return (
     <>
       <Button
-        ref={refs.setReference}
+        ref={(node) => floatingSetters.setReference(node)}
         {...getReferenceProps()}
         variant="outline"
         className="gap-2"
@@ -53,7 +53,7 @@ export function FloatingPopoverDemo() {
       <FloatingPortal>
         {isOpen && (
           <div
-            ref={refs.setFloating as any}
+            ref={(node) => floatingSetters.setFloating(node)}
             style={floatingStyles}
             {...getFloatingProps()}
             className="z-50 w-72 rounded-xl border border-zinc-200 bg-white p-4 shadow-md outline-none animate-in fade-in-0 zoom-in-95 data-[side=bottom]:slide-in-from-top-2"

@@ -13,7 +13,7 @@ export function AriaPopoverDemo() {
         Settings
       </RACButton>
       <Popover
-        className="z-50 w-72 rounded-xl border border-zinc-200 bg-white p-4 shadow-md outline-none data-[entering]:animate-in data-[exiting]:animate-out data-[exiting]:fade-out-0 data-[entering]:fade-in-0 data-[exiting]:zoom-out-95 data-[entering]:zoom-in-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=top]:slide-in-from-bottom-2"
+        className="z-50 w-72 rounded-xl border border-zinc-200 bg-white p-4 shadow-md outline-none data-[entering]:animate-content-show data-[exiting]:animate-content-hide"
         offset={5}
       >
         <Dialog className="outline-none">
